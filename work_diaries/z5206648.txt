@@ -1,0 +1,17 @@
+Week 1
+Tuesday
+Formed group. Formed with Emma, Bridget, Anson, Smit and myself. We created a group server on Discord to organise and communicate with each other. 
+We setup Jira and Emma was chosen as scrum master. We have chosen the project Task Master. 
+Organised another time weekly on Thursdays to also have another meeting. 
+
+Week 1
+Thursday
+Drafted user stories were created as a team.
+Imported user stories into Jira.
+Stack will be created with Node JS, React and MongoDB
+
+Week 2 
+Tuesday
+
+
+
