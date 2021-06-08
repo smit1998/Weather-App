@@ -1,0 +1,20 @@
+Week 1:
+
+Tuesday
+- We have formed a group, picked Emma as our Scrum Master for our team and discussed meeting times for each week.
+- Our meetings are on Thursday and Sunday.
+- Bridget is assigned to work on the Background.
+
+Thursday
+- Background is done
+- Smit had also wrote some Epics for the User Stories.
+- Created all the User Stories and made a timeline for each of them on Jira
+
+Week 2:
+
+Tuesday
+- Discussed how we should tackle the Technical depth and scale.
+- Assigned everyone storyboards to complete for the user stories.
+- Discussed technologies and languages to use which were NodeJS + MongoDB for Backend and ReactJS for Frontend.
+- Clarified with the tutor about what the presentation, business and data layer diagram should look like.
+- Discussed the sprints and the timing for each one (e.g. do we need to exclude week 6 because of flexibility?)
