@@ -1,0 +1,23 @@
+Week 1
+
+01/06
+- set up jira
+- webcms3 group
+- choose project
+- assign scrum master
+
+03/06
+- finalise user stories and sprints
+- create user stories and sprints in jira
+
+Week 2
+
+08/06
+- distribute storyboard
+- discuss system architecture
+
+10/06
+- completed use case diagram
+- completed system architecture diagram
+- setup infrastructure
+
