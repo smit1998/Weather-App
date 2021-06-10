@@ -1,0 +1,5 @@
+Week 1
+* Wrote up the project requirements into dot points
+* I finished the draft for the project background
+* I wrote some user stories
+* Chose to work on the backend
