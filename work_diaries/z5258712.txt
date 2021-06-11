@@ -18,3 +18,8 @@ Tuesday
 - Discussed technologies and languages to use which were NodeJS + MongoDB for Backend and ReactJS for Frontend.
 - Clarified with the tutor about what the presentation, business and data layer diagram should look like.
 - Discussed the sprints and the timing for each one (e.g. do we need to exclude week 6 because of flexibility?)
+
+Thursday
+- Completed use case diagram
+- Completed system architecture diagram
+- Setup a basic infrastructure for both frontend and backend
