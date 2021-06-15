@@ -12,6 +12,17 @@ Stack will be created with Node JS, React and MongoDB
 
 Week 2 
 Tuesday
+Distribute storyboard tasks to each member.
+User stories and sprints created in Jira.
+
+Week 2 
+Thursday
+Complete use case diagram.
+Complete system architecture diagram.
+Setup basic infrastructure of the backend and frontend.
+
+Week 3 
+Tuesday
 
 
 
