@@ -3,3 +3,8 @@ Week 1
 * I finished the draft for the project background
 * I wrote some user stories
 * Chose to work on the backend
+
+Week 2
+* Drew a Use Case diagram
+* Finished the storyboard for User stories Epic 6 (and 7.3)
+* Helped find resources to setup our stack
