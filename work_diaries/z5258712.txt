@@ -23,3 +23,16 @@ Thursday
 - Completed use case diagram
 - Completed system architecture diagram
 - Setup a basic infrastructure for both frontend and backend
+
+Week 3:
+
+Tuesday
+- Discussed novel features to implement (poke, show user is open for tasks)
+- Discussed more about the stack setup
+- Assigned tasks to accomodate for the novel features update
+- Confirmed whether to split or combine storyboards
+
+Thursday
+- Discussed whether we had completed the tasks we had assigned each other during Tuesday
+- Assigned tasks to piece together the proposal
+- Working on the setup for the project (almost done!)
