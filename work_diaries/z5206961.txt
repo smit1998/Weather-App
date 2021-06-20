@@ -21,3 +21,14 @@ Week 2
 - completed system architecture diagram
 - setup infrastructure
 
+Week 3
+
+15/06
+- finish storyboards
+- novel features: poke, "open to tasks"
+- update sprints to contain novel features
+
+20/06
+- finished setup of infrastructure
+- finalised and submitted proposal
+
