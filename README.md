@@ -15,7 +15,7 @@ sudo apt install npm
 4. Install yarn using this command:
 
 ```
-npm install --global yarn
+sudo npm install --global yarn
 ```
 
 5. Use this command to install dependencies and setup React:
