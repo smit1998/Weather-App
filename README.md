@@ -1,6 +1,6 @@
-# React + Python Webapp Setup
+# COMP3900-9900-Capstone-Project Peepo
 
-Boilerplate code for a React + Python Webapp project.
+Task Master project created in React and Python using SQLite for storage.
 
 ## How to Setup the project
 
