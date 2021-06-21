@@ -23,6 +23,16 @@ Setup basic infrastructure of the backend and frontend.
 
 Week 3 
 Tuesday
+Thought about ideas for novel features to implement
+Fix up Jira user stories and grouping into sprints
+Assigned tasks to include novel features into storyboards
 
+Thursday
+Check tasks needed to complete for the proposal.
+Assigned tasks to individuals to complete parts of propsal and link together.
+
+Sunday
+Completed proposal 
+Gave tasks to members and planned future labs.
 
 
