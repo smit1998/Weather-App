@@ -1,5 +1,7 @@
 Week 1
- - created epic story points from the specifications
+- Formed group with Emma, Bridget, Anson, Harrison and myself. 
+- created a group server on Discord to organise and communicate with each other. 
+- created epic story points from the specifications
 
 Week 2
 - discuss storyboard
