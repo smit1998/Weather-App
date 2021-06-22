@@ -32,3 +32,11 @@ Week 3
 - finished setup of infrastructure
 - finalised and submitted proposal
 
+Week 4
+
+21/06
+- link github to jira
+
+22/06
+- migrate from flask to django
+
