@@ -95,6 +95,11 @@ You will also see any lint errors in the console.
 Runs the Python Django backend api app in development mode.\
 This service runs on http://localhost:8000.
 
+### `yarn migrate`
+
+Runs database migrations and creates the database if it does not exist yet.\
+This will update the database with any changes to the existing models or creates tables if there are new models.
+
 ### `yarn test`
 
 Launches the test runner in the interactive watch mode.\
