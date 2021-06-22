@@ -1,1 +1,14 @@
+Week 1
+ - created epic story points from the specifications
 
+Week 2
+- discuss storyboard
+- discuss system architecture
+- completed system architecture diagram
+
+Week 3
+
+- finished storyboards
+- updated use case diagram
+- updated system architecture diagram
+- finalised and submitted proposal
