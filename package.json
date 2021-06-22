@@ -14,8 +14,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "start-api": "export FLASK_ENV=development && venv/bin/flask run",
-    "prod-start-api": "export FLASK_ENV=production && venv/bin/gunicorn --bind 127.0.0.1:5000 wsgi:app",
+    "start-api": "venv/bin/python3 manage.py runserver",
+    "create-venv": "python3 -m venv venv",
+    "migrate": "venv/bin/python3 manage.py migrate",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

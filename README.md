@@ -24,10 +24,19 @@ sudo npm install --global yarn
 yarn install
 ```
 
-6. Install python3 venv
-7. Run this command to setup the virtual environment for python
+6. Install python3 venv using this command:
 
 ```
+sudo apt install python3-venv
+```
+
+7. Run either of these commands to setup the virtual environment for Python:
+
+```
+yarn create-venv
+
+or
+
 python3 -m venv venv
 ```
 
@@ -55,7 +64,7 @@ deactivate
 yarn start
 ```
 
-12. Open another terminal in the root directory and use this command to start the development Python Flask server:
+12. Open another terminal in the root directory and use this command to start the development Python Django server:
 
 ```
 yarn start-api
@@ -77,15 +86,8 @@ You will also see any lint errors in the console.
 
 ### `yarn start-api`
 
-Runs the Python Flask backend api app in development mode.\
-This service runs on http://localhost:5000.
-
-This is not meant to be run for production. Check out the next command to find out more.
-
-### `yarn prod-start-api`
-
-Runs the Python Flask backend api app in production mode.\
-This service runs on http://localhost:5000.
+Runs the Python Django backend api app in development mode.\
+This service runs on http://localhost:8000.
 
 ### `yarn test`
 
