@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.css'
-import Button from 'react-bootstrap/Button';
 import HomePage from './pages/Home';
 import './styles/App.css';
 import './styles/index.css';
