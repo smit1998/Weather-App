@@ -58,19 +58,25 @@ pip3 install -r requirements.txt
 deactivate
 ```
 
-11. Activate the development React server using this command:
+11. Create the database using this command:
+
+```
+yarn migrate
+```
+
+12. Activate the development React server using this command:
 
 ```
 yarn start
 ```
 
-12. Open another terminal in the root directory and use this command to start the development Python Django server:
+13. Open another terminal in the root directory and use this command to start the development Python Django server:
 
 ```
 yarn start-api
 ```
 
-13. Navigate to [http://localhost:3000](http://localhost:3000) to view the website.
+14. Navigate to [http://localhost:3000](http://localhost:3000) to view the website.
 
 ## Commands
 
