@@ -1,17 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'bootstrap/dist/css/bootstrap.css'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.css';
 import HomePage from './pages/Home';
+import LoginPage from './pages/Login';
 import './styles/App.css';
 import './styles/index.css';
 import './styles/button.css';
 
 class App extends React.Component {
+  renderRoutes() {
+    return (
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route exact path="/login" component={LoginPage} />
+      </Switch>
+    );
+  }
+
   render() {
     return (
-      <div className="App">
-        <HomePage />
-      </div>
+      <Router>
+        <div className="App">
+          {this.renderRoutes()}
+        </div>
+      </Router>
     );
   }
 }
