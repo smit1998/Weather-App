@@ -28,12 +28,16 @@ export default class HomePage extends React.Component {
       );
   }
 
+  navigateToPage(path) {
+    window.location.href = path;
+  }
+
   render() {
     return (
       <React.Fragment>
         <h2>{`Task Master`}</h2>
-        <Button className="button">{`Sign In`}</Button>
-        <Button className="button">{`Sign Up`}</Button>
+        <Button className="button" onClick={() => this.navigateToPage('/login')}>{`Login`}</Button>
+        <Button className="button" onClick={() => this.navigateToPage('/signup')}>{`Sign Up`}</Button>
       </React.Fragment>
     );
   }
