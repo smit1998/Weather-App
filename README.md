@@ -2,6 +2,9 @@
 
 Task Master project created in React and Python using SQLite for storage.
 
+## Requirements
+- Python3 version 3.7.3 or over
+
 ## How to Setup the project
 
 1. git clone this project
@@ -46,37 +49,43 @@ python3 -m venv venv
 source venv/bin/activate
 ```
 
-9. Install the dependencies for the backend server api using this command:
+9. Use the specific version of pip3 while in the virtual environment by running this command:
+
+```
+pip3 install pip==20.0.2
+```
+
+10. Install the dependencies for the backend server api using this command:
 
 ```
 pip3 install -r requirements.txt
 ```
 
-10. Exit the virtual environment using this command:
+11. Exit the virtual environment using this command:
 
 ```
 deactivate
 ```
 
-11. Create the database using this command:
+12. Create the database using this command:
 
 ```
 yarn migrate
 ```
 
-12. Activate the development React server using this command:
+13. Activate the development React server using this command:
 
 ```
 yarn start
 ```
 
-13. Open another terminal in the root directory and use this command to start the development Python Django server:
+14. Open another terminal in the root directory and use this command to start the development Python Django server:
 
 ```
 yarn start-api
 ```
 
-14. Navigate to [http://localhost:3000](http://localhost:3000) to view the website.
+15. Navigate to [http://localhost:3000](http://localhost:3000) to view the website.
 
 ## Commands
 
