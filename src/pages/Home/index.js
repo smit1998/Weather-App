@@ -47,7 +47,7 @@ export default class HomePage extends React.Component {
     return (
       <React.Fragment>
         <h2>{`Task Master`}</h2>
-        <Button className="button" onClick={() => this.navigateToPage('/login')}>{`Login`}</Button>
+        <Button className="button" onClick={() => this.navigateToPage('/login')}>{`Login123`}</Button>
         <Button className="button" onClick={() => this.navigateToPage('/signup')}>{`Sign Up`}</Button>
       </React.Fragment>
     );
