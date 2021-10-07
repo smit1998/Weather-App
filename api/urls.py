@@ -1,8 +1,9 @@
 from django.urls import path
-from api.views.user import Users
-
+from api.views.userProfile import UserProfile
+from api.views.favourites import AddFavouriteLocation
 BASE_API_URL = 'api'
 
 urlpatterns = [
-    path(f'{BASE_API_URL}/user/', Users.as_view()),
+    path(f'{BASE_API_URL}/user/', UserProfile.as_view()),
+    path(f'{BASE_API_URL}/favourites/', AddFavouriteLocation.as_view()),
 ]
