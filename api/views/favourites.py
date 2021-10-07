@@ -19,8 +19,8 @@ class AddFavouriteLocation(APIView):
             data = request.data
             user = request.user
             
-            # if checkIfAlreadyInFavourite(user, data):
-            #    return Response({"message": "Already added to favourites"}, status=status.HTTP_201_CREATED)
+            if self.checkIfAlreadyInFavourite(user, data):
+                return Response({"message": "Location is already in favourites"}, status=status.HTTP_201_CREATED)
             
             self.addToFavourites(user, data)
             return Response({"message": "Location added to favourites"}, status=status.HTTP_201_CREATED)
@@ -35,9 +35,9 @@ class AddFavouriteLocation(APIView):
             )
             new_location.save()
     
-    def checkIfAlreadyInFavourite(user, data):
+    def checkIfAlreadyInFavourite(self, user, data):
         check_location = Favourites.objects.filter(location=data['location'], user=user).exists()
-        if user_location:
+        if check_location:
             return True
         return False
 
