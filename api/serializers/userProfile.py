@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from api.models.userProfile import UserProfile
+from api.models.profile import Profile
 
 class ProfileSerializer(serializers.ModelSerializer):
     username = serializers.CharField(source='user.username')
@@ -9,5 +9,5 @@ class ProfileSerializer(serializers.ModelSerializer):
     last_name = serializers.CharField(source='user.last_name')
 
     class Meta:
-        model = UserProfile
+        model = Profile
         fields =  '__all__'

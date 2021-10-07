@@ -1,6 +1,6 @@
 from django.db import models
 from django.conf import settings
-from api.models.userProfile import UserProfile
+from api.models.profile import Profile
 
 class Favourites(models.Model):
     class Meta:

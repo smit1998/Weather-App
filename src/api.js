@@ -58,4 +58,18 @@ export default class API {
       })
       .then(res => ({ status: res.status }));
   }
+
+  static addToFavourite(location) {
+    return fetch('api/favourites/', {
+      method: 'POST',
+      headers: {
+        'Authorization': getAuthToken(),
+        'content-Type': 'application/json',
+      },
+      body: JSON.stringify({ 'location': location })
+    })
+    .then(res => res.json()
+      .then(data => ({ status: res.status, body: data}))
+    );
+  }
 }
