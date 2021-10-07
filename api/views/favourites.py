@@ -19,7 +19,7 @@ class AddFavouriteLocation(APIView):
             data = request.data
             user = request.user
             
-            if self.checkIfAlreadyInFavourite(user, data):
+            if checkIfAlreadyInFavourite(user, data):
                 return Response({"message": "Location is already in favourites"}, status=status.HTTP_201_CREATED)
             
             self.addToFavourites(user, data)
@@ -34,11 +34,30 @@ class AddFavouriteLocation(APIView):
                 user=user
             )
             new_location.save()
-    
-    def checkIfAlreadyInFavourite(self, user, data):
+
+class RemoveFromFavourite(APIView):
+    permission_classes = (IsAuthenticated,)
+
+    def post(self, request):
+        serializer = AddFavouriteLocationSerializer(data=request.data)
+
+        if serializer.is_valid():
+            data = request.data
+            user = request.user
+            
+            if not checkIfAlreadyInFavourite(user, data):
+                return Response({"message": "Location is not in favourites!"}, status=status.HTTP_400_BAD_REQUEST)
+            
+            self.removeFromFavourites(user, data)
+            return Response({"message": "Location removed from favourites"}, status=status.HTTP_201_CREATED)
+                
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def removeFromFavourites(self, user, data):
+        Favourites.objects.filter(location=data['location'], user=user).delete()
+
+def checkIfAlreadyInFavourite(user, data):
         check_location = Favourites.objects.filter(location=data['location'], user=user).exists()
         if check_location:
             return True
         return False
-
-
