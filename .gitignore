@@ -29,4 +29,4 @@ tags
 *.swp
 
 # Database
-tasks.db
+users.db
