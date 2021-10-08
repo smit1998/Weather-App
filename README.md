@@ -1,6 +1,3 @@
-# COMP3900-9900-Capstone-Project Peepo
-
-Task Master project created in React and Python using SQLite for storage.
 
 ## Requirements
 - Python3 version 3.7.3 or over
