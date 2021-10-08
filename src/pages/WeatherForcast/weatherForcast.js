@@ -38,7 +38,9 @@ export default class WeatherData extends React.Component {
                     const weekForcast = data.daily.map(day => {
                         return day.weather[0].main;
                     })
-                });
+                    
+                })
+                .catch((error) => alert("The following error has occured:" + error));
         }
 
     }
