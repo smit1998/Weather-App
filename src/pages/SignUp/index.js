@@ -38,6 +38,7 @@ export default class SignUpPage extends React.Component {
         result => {
           const data = result.body;
           if (result.status === 400) {
+          // console.log(data);
             this.setState({ error: data.password[0] });
           } else if (result.status !== 201) {
             this.setState({ error: 'We could not process your request at this time. Please try again.' });

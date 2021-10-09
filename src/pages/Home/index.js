@@ -5,7 +5,8 @@ import '../../styles/button.css';
 import API from '../../api';
 import WeatherData from '../WeatherForcast/weatherForcast';
 import Forest from '../../assets/Forest.mp4';
-import Rain from '../../assets/Rain.mp4';
+import Clouds from '../../assets/Clouds.mov';
+import Header from '../../components/Header/header';
 
 export default class HomePage extends React.Component {
   constructor(props) {
@@ -83,10 +84,10 @@ export default class HomePage extends React.Component {
             transform: 'translate(-50%, -50%)',
             zIndex: '-1'
           }}>
-            <source src={Rain} type="video/mp4" />
+            <source src={Clouds} type="video/mp4" />
           </video>
-          <h2 style={{textAlign: 'center'}}>{`Weather Forcast`}</h2>
-
+          <Header />
+          
           <WeatherData />
           <Button className="button" onClick={this.handleLogOut}>{`Log Out`}</Button>
       </React.Fragment>
