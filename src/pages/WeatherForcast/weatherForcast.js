@@ -20,6 +20,32 @@ export default class WeatherData extends React.Component {
             background_video: "Hi there",
         };
         this.checkValue = this.checkValue.bind(this);
+        this.addToFav = this.addToFav.bind(this);
+    }
+
+    addToFav() {
+        const location = this.state.city;
+        API.addToFavourite(location)
+            .then(
+                result => {
+                    if(result.status === 201) {
+                        console.log("success");
+                    } else {
+                        console.log("city not added to fav");
+                    }
+                }
+            )
+    }
+
+    getAllFav() {
+        API.getAllFavourite()
+            .then(
+                result => {
+                    if(result.status === 200) {
+                        console.log(result.body);
+                    }
+                }
+            )
     }
 
     async checkValue(event) {
@@ -90,7 +116,7 @@ export default class WeatherData extends React.Component {
                         <div className="eachDayContainer">{this.state.weekWeather[5]}</div>
                         <div className="eachDayContainer">{this.state.weekWeather[6]}</div>
                     </div>
-                    <Button>Add To Favourite</Button>
+                    <Button onClick={this.getAllFav}>Add To Favourite</Button>
                 </div>
             </div>
         );

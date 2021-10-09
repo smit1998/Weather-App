@@ -7,6 +7,7 @@ from rest_framework import status
 from django.contrib.auth.models import User
 from api.models.favourites import Favourites
 from api.serializers.favourites import AddFavouriteLocationSerializer
+from django.db.models import Q
 
 
 class AddFavouriteLocation(APIView):
@@ -55,6 +56,24 @@ class RemoveFromFavourite(APIView):
 
     def removeFromFavourites(self, user, data):
         Favourites.objects.filter(location=data['location'], user=user).delete()
+
+class getAllFavourites(APIView):
+    permission_classes = (IsAuthenticated,)
+
+    def get(self, request):
+        user = request.user
+        try:
+            query = Q(user=user)
+            allLocations = Favourites.objects.filter(query)
+            loc = []
+
+            for i in allLocations:
+                loc.append({
+                    'locations': i.location
+                })
+            return Response(loc)
+        except: 
+            return Response({ "error": "No user with this username exists"}, status=status.HTTP_400_BAD_REQUEST)
 
 def checkIfAlreadyInFavourite(user, data):
         check_location = Favourites.objects.filter(location=data['location'], user=user).exists()

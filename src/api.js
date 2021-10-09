@@ -72,4 +72,16 @@ export default class API {
       .then(data => ({ status: res.status, body: data}))
     );
   }
+
+  static getAllFavourite() {
+    return fetch('api/favourites/all', {
+      method: 'GET',
+      headers: {
+        'Authorization': getAuthToken(),
+      },
+    })
+      .then(res => res.json()
+        .then(data => ({ status: res.status, body: data }))
+      );
+  }
 }
