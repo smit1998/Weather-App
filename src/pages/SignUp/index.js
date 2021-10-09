@@ -6,7 +6,7 @@ import Alert from 'react-bootstrap/Alert';
 import '../../styles/button.css';
 import '../../styles/form.css';
 import API from '../../api';
-
+import Forest from '../../assets/Forest.mp4'
 export default class SignUpPage extends React.Component {
   constructor(props) {
     super(props);
@@ -54,38 +54,50 @@ export default class SignUpPage extends React.Component {
 
     return (
       <React.Fragment>
-        <h2>{`Sign Up`}</h2>
-        <Alert show={error !== ''} variant="danger">{error}</Alert>
-        <form className="form" onSubmit={this.handleSignUp}>
-          <Form.Group className="form-group">
-            <Form.Label>{'Username'}</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Username"
-              value={this.state.username}
-              onChange={e => this.setState({ username: e.target.value })}
-            />
-          </Form.Group>
-          <Form.Group className="form-group">
-            <Form.Label>{'Password'}</Form.Label>
-            <Form.Control
-              type="password"
-              placeholder="Password"
-              value={this.state.password}
-              onChange={e => this.setState({ password: e.target.value })}
-            />
-          </Form.Group>
-          <Form.Group className="form-group">
-            <Form.Label>{'Confirm Password'}</Form.Label>
-            <Form.Control
-              type="password"
-              placeholder="Confirm Password"
-              value={this.state.confirmPassword}
-              onChange={e => this.setState({ confirmPassword: e.target.value })}
-            />
-          </Form.Group>
-          <Button className="button" type="submit">{`Sign Up`}</Button>
-        </form>
+        <video autoPlay loop muted style={{
+          position: 'absolute',
+          width: '100%',
+          left: '50%',
+          top: '50%',
+          height: '100%',
+          objectFit: 'cover',
+          transform: 'translate(-50%, -50%)',
+          zIndex: '-1'
+        }}>
+          <source src={Forest} type="video/mp4" />
+        </video>
+          <h2 style={{textAlign: 'center', color: 'green'}}>{`Sign Up`}</h2>
+          <Alert show={error !== ''} variant="danger">{error}</Alert>
+          <form className="form" onSubmit={this.handleSignUp}>
+            <Form.Group className="form-group">
+            <Form.Label style={{ color: 'green' }}>{'Username'}</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Username"
+                value={this.state.username}
+                onChange={e => this.setState({ username: e.target.value })}
+              />
+            </Form.Group>
+            <Form.Group className="form-group">
+            <Form.Label style={{ color: 'green' }}>{'Password'}</Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="Password"
+                value={this.state.password}
+                onChange={e => this.setState({ password: e.target.value })}
+              />
+            </Form.Group>
+            <Form.Group className="form-group">
+            <Form.Label style={{ color: 'green' }}>{'Confirm Password'}</Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="Confirm Password"
+                value={this.state.confirmPassword}
+                onChange={e => this.setState({ confirmPassword: e.target.value })}
+              />
+            </Form.Group>
+            <Button className="button" type="submit" style={{backgroundColor: 'green'}}>{`Sign Up`}</Button>
+          </form>
       </React.Fragment>
     );
   }
