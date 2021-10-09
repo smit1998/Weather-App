@@ -2,6 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css'
 import Button from 'react-bootstrap/Button';
 import '../../styles/button.css';
+import './weatherForcast.css';
 
 export default class WeatherData extends React.Component {
     constructor(props) {
@@ -11,6 +12,12 @@ export default class WeatherData extends React.Component {
             country: "",
             lat: "",
             lon: "",
+            todayWeather: "",
+            todayTemp: "",
+            weekWeather: [],
+            weekTempMax: [],
+            weekTempMin: [],
+            background_video: "Hi there",
         };
         this.checkValue = this.checkValue.bind(this);
     }
@@ -35,14 +42,59 @@ export default class WeatherData extends React.Component {
             )
                 .then((res) => res.json())
                 .then((data) => {
+                    console.log(data);
+                    this.setState({ todayWeather: data.current.weather[0].main, 
+                                    todayTemp: data.current.temp + " F"});
+
                     const weekForcast = data.daily.map(day => {
                         return day.weather[0].main;
                     })
+
+                    const weekTempMax = data.daily.map(day => {
+                        return day.temp.max;
+                    })
+
+                    const weekTempMin = data.daily.map(day => {
+                        return day.temp.min;
+                    })
+                    this.setState({ 
+                                    weekWeather: weekForcast, 
+                                    weekTempMax: weekTempMax, 
+                                    weekTempMin: weekTempMin
+                                });
                     
                 })
                 .catch((error) => alert("The following error has occured:" + error));
         }
 
+    }
+
+    weatherBox() {
+        return (
+            <div background_video={this.state.background_video}>
+                <form style={{ textAlign: 'center' }}>
+                    <input type="text" placeholder="City" onChange={e => { this.setState({ city: e.target.value }) }} />
+                    <input type="text" placeholder="country" onChange={e => { this.setState({ country: e.target.value }) }} />
+                    <Button className="button" onClick={this.checkValue}>Submit</Button>
+                </form>
+                <div className="mainContainer">
+                    <div className="todayWeatherContainer">{this.state.todayTemp}{this.state.todayWeather}</div>
+                    <div className="weekWeatherContainer">
+                        <div className="eachDayContainer">
+                            {this.state.weekWeather[0]}
+                            {this.state.weekTempMax[0]}
+                        </div>
+                        <div className="eachDayContainer">{this.state.weekWeather[1]}</div>
+                        <div className="eachDayContainer">{this.state.weekWeather[2]}</div>
+                        <div className="eachDayContainer">{this.state.weekWeather[3]}</div>
+                        <div className="eachDayContainer">{this.state.weekWeather[4]}</div>
+                        <div className="eachDayContainer">{this.state.weekWeather[5]}</div>
+                        <div className="eachDayContainer">{this.state.weekWeather[6]}</div>
+                    </div>
+                    <Button>Add To Favourite</Button>
+                </div>
+            </div>
+        );
     }
 
     weatherForm() {
@@ -52,9 +104,13 @@ export default class WeatherData extends React.Component {
                 <input type="text" placeholder="country" onChange={e => { this.setState({ country: e.target.value }) }} />
                 <Button className="button" onClick={this.checkValue}>Submit</Button>
             </form>
-        );
+        )
     }
+
     render() {
+        if(this.state.city) {
+            return this.weatherBox();
+        }
         return this.weatherForm();
     }
 }

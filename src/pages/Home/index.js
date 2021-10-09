@@ -4,7 +4,8 @@ import Button from 'react-bootstrap/Button';
 import '../../styles/button.css';
 import API from '../../api';
 import WeatherData from '../WeatherForcast/weatherForcast';
-import Forest from '../../assets/Forest.mp4'
+import Forest from '../../assets/Forest.mp4';
+import Rain from '../../assets/Rain.mp4';
 
 export default class HomePage extends React.Component {
   constructor(props) {
@@ -69,18 +70,25 @@ export default class HomePage extends React.Component {
   }
 
   renderLoggedIn() {
+    console.log(this.props);
     return (
       <React.Fragment>
-        <div style={{
-          backgroundSize: 'cover',
-          backgroundImage: `url("https://cdn.vox-cdn.com/thumbor/z7bKIfTyJq3ibFF7YRYSCoxH3eI=/0x0:1004x753/920x613/filters:focal(422x296:582x456):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/63710251/20150428-cloud-computing.0.1489222360.0.jpg")`,
-          width: '100vw',
-          height: '100vh'
-        }}>
+            <video autoPlay loop muted style={{
+            position: 'absolute',
+            width: '100%',
+            left: '50%',
+            top: '50%',
+            height: '100%',
+            objectFit: 'cover',
+            transform: 'translate(-50%, -50%)',
+            zIndex: '-1'
+          }}>
+            <source src={Rain} type="video/mp4" />
+          </video>
           <h2 style={{textAlign: 'center'}}>{`Weather Forcast`}</h2>
+
           <WeatherData />
           <Button className="button" onClick={this.handleLogOut}>{`Log Out`}</Button>
-        </div>
       </React.Fragment>
     );
   }
