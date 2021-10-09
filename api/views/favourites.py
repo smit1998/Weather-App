@@ -75,6 +75,21 @@ class getAllFavourites(APIView):
         except: 
             return Response({ "error": "No user with this username exists"}, status=status.HTTP_400_BAD_REQUEST)
 
+class CheckIfInFavourite(APIView):
+    permission_classes = (IsAuthenticated,)
+
+    def post(self, request):
+        serializer = AddFavouriteLocationSerializer(data=request.data)
+        
+        if serializer.is_valid():
+            data = request.data
+            user = request.user
+            
+            if checkIfAlreadyInFavourite(user, data):
+                return Response({"message": "True"}, status=status.HTTP_201_CREATED)
+            else:
+                return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 def checkIfAlreadyInFavourite(user, data):
         check_location = Favourites.objects.filter(location=data['location'], user=user).exists()
         if check_location:

@@ -23,11 +23,9 @@ export default class Favourite extends React.Component {
                         return l.locations;
                     })
                     this.setState({ locations: loc });
-                    console.log(this.state.locations);
                 }
             })
             .catch((error) => alert(error));
-
     }
 
 }

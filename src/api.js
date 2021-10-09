@@ -73,12 +73,40 @@ export default class API {
     );
   }
 
+  static removeFromFavourite(location) {
+    return fetch('api/favourites/remove', {
+      method: 'POST',
+      headers: {
+        'Authorization': getAuthToken(),
+        'content-Type': 'application/json',
+      },
+      body: JSON.stringify({ 'location': location })
+    })
+      .then(res => res.json()
+        .then(data => ({ status: res.status, body: data }))
+      );
+  }
+
   static getAllFavourite() {
     return fetch('api/favourites/all', {
       method: 'GET',
       headers: {
         'Authorization': getAuthToken(),
       },
+    })
+      .then(res => res.json()
+        .then(data => ({ status: res.status, body: data }))
+      );
+  }
+
+  static checkInFavourite(location) {
+    return fetch('api/favourites/check', {
+      method: 'POST',
+      headers: {
+        'Authorization': getAuthToken(),
+        'content-Type': 'application/json',
+      },
+      body: JSON.stringify({ 'location': location })
     })
       .then(res => res.json()
         .then(data => ({ status: res.status, body: data }))
