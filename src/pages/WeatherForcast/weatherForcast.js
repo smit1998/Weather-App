@@ -3,13 +3,13 @@ import 'bootstrap/dist/css/bootstrap.css'
 import Button from 'react-bootstrap/Button';
 import '../../styles/button.css';
 import './weatherForcast.css';
+import API from '../../api';
 
 export default class WeatherData extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             city: "",
-            country: "",
             lat: "",
             lon: "",
             todayWeather: "",
@@ -74,7 +74,6 @@ export default class WeatherData extends React.Component {
             <div background_video={this.state.background_video}>
                 <form style={{ textAlign: 'center' }}>
                     <input type="text" placeholder="City" onChange={e => { this.setState({ city: e.target.value }) }} />
-                    <input type="text" placeholder="country" onChange={e => { this.setState({ country: e.target.value }) }} />
                     <Button className="button" onClick={this.checkValue}>Submit</Button>
                 </form>
                 <div className="mainContainer">
@@ -101,7 +100,6 @@ export default class WeatherData extends React.Component {
         return (
             <form style={{ textAlign: 'center' }}>
                 <input type="text" placeholder="City" onChange={e => { this.setState({ city: e.target.value }) }} />
-                <input type="text" placeholder="country" onChange={e => { this.setState({ country: e.target.value }) }} />
                 <Button className="button" onClick={this.checkValue}>Submit</Button>
             </form>
         )
