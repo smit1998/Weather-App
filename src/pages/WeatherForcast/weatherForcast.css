@@ -38,3 +38,13 @@
     text-align: center;
     font-size: 15px;
 }
+
+.inputCity {
+    border-radius: 20px;
+}
+
+.submitButton {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: green;
+}

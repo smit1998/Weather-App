@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import HomePage from './pages/Home';
 import LoginPage from './pages/Login';
 import SignUpPage from './pages/SignUp';
+import Favourite from './pages/Favourites';
 import './styles/App.css';
 import './styles/index.css';
 import './styles/button.css';
@@ -16,6 +17,7 @@ class App extends React.Component {
         <Route exact path="/" component={HomePage} />
         <Route exact path="/login" component={LoginPage} />
         <Route exact path="/signup" component={SignUpPage} />
+        <Route exact path="/Favourites" component={Favourite} />
       </Switch>
     );
   }

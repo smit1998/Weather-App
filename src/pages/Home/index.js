@@ -89,7 +89,7 @@ export default class HomePage extends React.Component {
           <Header />
           
           <WeatherData />
-          <Button className="button" onClick={this.handleLogOut}>{`Log Out`}</Button>
+          <Button className="logOutButton" onClick={this.handleLogOut}>{`Log Out`}</Button>
       </React.Fragment>
     );
   }

@@ -37,17 +37,6 @@ export default class WeatherData extends React.Component {
             )
     }
 
-    getAllFav() {
-        API.getAllFavourite()
-            .then(
-                result => {
-                    if(result.status === 200) {
-                        console.log(result.body);
-                    }
-                }
-            )
-    }
-
     async checkValue(event) {
         const myAPIKey = "074cd3f6368f6265d00c16f1b431f814";
 
@@ -99,14 +88,14 @@ export default class WeatherData extends React.Component {
         return (
             <div background_video={this.state.background_video}>
                 <form style={{ textAlign: 'center' }}>
-                    <input type="text" placeholder="City" onChange={e => { this.setState({ city: e.target.value }) }} />
-                    <Button className="button" onClick={this.checkValue}>Submit</Button>
+                    <input className="inputCity" type="text" placeholder="City" onChange={e => { this.setState({ city: e.target.value }) }} /><br />
+                    <Button className="submitButton" onClick={this.checkValue}>Submit</Button>
                 </form>
                 <div className="mainContainer">
-                    <div className="todayWeatherContainer">{this.state.todayTemp}{this.state.todayWeather}</div>
+                    <div className="todayWeatherContainer">{this.state.todayTemp}<br />{this.state.todayWeather}</div>
                     <div className="weekWeatherContainer">
                         <div className="eachDayContainer">
-                            {this.state.weekWeather[0]}
+                            {this.state.weekWeather[0]} <br />
                             {this.state.weekTempMax[0]}
                         </div>
                         <div className="eachDayContainer">{this.state.weekWeather[1]}</div>
@@ -116,7 +105,7 @@ export default class WeatherData extends React.Component {
                         <div className="eachDayContainer">{this.state.weekWeather[5]}</div>
                         <div className="eachDayContainer">{this.state.weekWeather[6]}</div>
                     </div>
-                    <Button onClick={this.getAllFav}>Add To Favourite</Button>
+                    <Button className="submitButton" onClick={this.addToFav}>Add To Favourite</Button>
                 </div>
             </div>
         );
@@ -125,8 +114,8 @@ export default class WeatherData extends React.Component {
     weatherForm() {
         return (
             <form style={{ textAlign: 'center' }}>
-                <input type="text" placeholder="City" onChange={e => { this.setState({ city: e.target.value }) }} />
-                <Button className="button" onClick={this.checkValue}>Submit</Button>
+                <input type="text" className="inputCity" placeholder="  CITY" onBlur={e => { this.setState({ city: e.target.value }) }} /> <br/>
+                <Button className="submitButton" onClick={this.checkValue}>Submit</Button>
             </form>
         )
     }
