@@ -317,7 +317,7 @@ export default class WeatherData extends React.Component {
     weatherForm() {
         return (
             <form style={{ textAlign: 'center' }}>
-                <input type="text" className="inputCity" placeholder="  CITY" onBlur={e => { this.setState({ city: e.target.value }) }} /> <br/>
+                <input type="text" className="inputCity" placeholder="  CITY" onChange={e => { this.setState({ city: e.target.value }) }} /> <br/>
                 <Button className="submitButton" onClick={this.checkValue}>Submit</Button>
             </form>
         )
