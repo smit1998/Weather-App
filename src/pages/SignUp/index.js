@@ -52,9 +52,9 @@ export default class SignUpPage extends React.Component {
           const data = result.body;
           if (result.status === 400) {
           // console.log(data);
-            this.setState({ error: data.password[0] });
+            alert("User with this username exists! Please enter a different username.")
           } else if (result.status !== 201) {
-            this.setState({ error: 'We could not process your request at this time. Please try again.' });
+            alert('We could not process your request at this time. Please try again.');
           } else {
             this.setState({ accountCreated: true });
           }

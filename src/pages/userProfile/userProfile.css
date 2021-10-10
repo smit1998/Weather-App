@@ -1,4 +1,4 @@
-.mainContainer2 {
+.mainContainer1 {
     width: 50%;
     height: 60%;
     background-color: rgb(255, 255, 255);
@@ -7,16 +7,15 @@
 
 }
 
-.usernameContainer {
+.usernameContainer1 {
     height: 25px;
     border-radius: 10px;
     margin-top: 10px;
     border-color: black;
 }
 
-.inputContainer {
+.inputContainer1 {
     height: 35px;
-    width: 100%;
     border-radius: 5px;
     margin-top: 10px;
     border-color: black;
@@ -25,7 +24,7 @@
     
 }
 
-.button {
+.button1 {
     background-color: green;
     margin-top: 20px;
     height: 35px;
