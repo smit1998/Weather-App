@@ -16,7 +16,7 @@ class Users(APIView):
         serializer = UserSerializer(users, many=True)
         return Response(serializer.data)
 
-
+# return the current user's details
 class UserMyself(APIView):
     permission_classes = (IsAuthenticated,)
 
@@ -30,6 +30,7 @@ class UserMyself(APIView):
             'id': user.id,
         })
 
+# update the email of the current user
 class UpdateUser(APIView):
     permission_classes = (IsAuthenticated,)
 

@@ -3,6 +3,7 @@ function getAuthToken() {
   return authToken ? `Token ${authToken}` : '';
 }
 
+  // Fetch req to get all users
 export default class API {
   static getUsers() {
     return fetch('/api/user/', {
@@ -16,6 +17,7 @@ export default class API {
       );
   }
 
+  // Fetch req to login an existing user
   static login(username, password) {
     return fetch('/auth/token/login', {
         method: 'POST',
@@ -32,6 +34,7 @@ export default class API {
       );
   }
 
+  // Fetc req to signup a new user
   static signUp(username, password, email) {
     return fetch('/auth/users/', {
         method: 'POST',
@@ -49,6 +52,7 @@ export default class API {
       );
   }
 
+  // Fetch req to logout current user
   static logout(username, password) {
     return fetch('/auth/token/logout', {
         method: 'POST',
@@ -60,6 +64,7 @@ export default class API {
       .then(res => ({ status: res.status }));
   }
 
+  // Fetch req to get user's profile
   static myProfile() {
     return fetch('/api/user/me', {
       method: 'GET',
@@ -72,6 +77,7 @@ export default class API {
       );
   }
 
+  // Fetch req to update the current user's profile
   static updateUserProfile(email) {
     return fetch('/api/user/update', {
       method: 'PUT',
@@ -88,6 +94,7 @@ export default class API {
       );
   }
 
+  // fetch req to add a location to favourites
   static addToFavourite(location) {
     return fetch('api/favourites/', {
       method: 'POST',
@@ -102,6 +109,7 @@ export default class API {
     );
   }
 
+  // fetch req to remove the location from favourites
   static removeFromFavourite(location) {
     return fetch('api/favourites/remove', {
       method: 'POST',
@@ -116,6 +124,7 @@ export default class API {
       );
   }
 
+  // fetch req to get all the favourite locations of the current user
   static getAllFavourite() {
     return fetch('api/favourites/all', {
       method: 'GET',
@@ -128,6 +137,7 @@ export default class API {
       );
   }
 
+  // Fetch req to check is a particular location is in favourites 
   static checkInFavourite(location) {
     return fetch('api/favourites/check', {
       method: 'POST',
