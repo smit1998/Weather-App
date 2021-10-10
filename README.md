@@ -106,11 +106,6 @@ This service runs on http://localhost:8000.
 Runs database migrations and creates the database if it does not exist yet.\
 This will update the database with any changes to the existing models or creates tables if there are new models.
 
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
 ### `yarn build`
 
 Builds the app for production to the `build` folder.\
