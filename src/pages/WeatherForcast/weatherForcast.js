@@ -87,18 +87,18 @@ export default class WeatherData extends React.Component {
                 .then((data) => {
                     console.log(data);
                     this.setState({ todayWeather: data.current.weather[0].main, 
-                                    todayTemp: data.current.temp + " F"});
+                                    todayTemp: Math.round(data.current.temp - 273) + " C"});
 
                     const weekForcast = data.daily.map(day => {
                         return day.weather[0].main;
                     })
 
                     const weekTempMax = data.daily.map(day => {
-                        return day.temp.max;
+                        return Math.round(day.temp.max - 273);
                     })
 
                     const weekTempMin = data.daily.map(day => {
-                        return day.temp.min;
+                        return Math.round(day.temp.min - 273);
                     })
                     this.setState({ 
                                     weekWeather: weekForcast, 
