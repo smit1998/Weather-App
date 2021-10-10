@@ -76,7 +76,8 @@ export default class WeatherData extends React.Component {
                 `http://api.openweathermap.org/geo/1.0/direct?q=${this.state.city}&appid=${myAPIKey}`
             )
                 .then((res) => res.json())
-                .then((data) => this.setState({ lat: data[0].lat, lon: data[0].lon }));
+                .then((data) => this.setState({ lat: data[0].lat, lon: data[0].lon }))
+                .catch((error) => alert("Error! No such city exists! Please check you entry"));
 
             // Finding city and it's weather based on the latitude and longitude
             const data = await fetch(

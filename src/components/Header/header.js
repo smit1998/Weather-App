@@ -11,7 +11,7 @@ export default class Header extends React.Component {
     header() {
         return (
             <div className="navBar">
-                <div className="weatherLogo" onClick={() => this.navigateToPage('/')}> Weather Forcast</div>
+                <div className="weatherLogo" onClick={() => this.navigateToPage('/')}>🌤 Weather Forcast</div>
                 <div className="navElements" onClick={() => this.navigateToPage('/')}> Home </div>
                 <div className="navElements2" onClick={() => this.navigateToPage('/Favourites')}>Favourites</div>
                 <div className="navElements2" onClick={() => this.navigateToPage('/Maps')}>Maps</div>

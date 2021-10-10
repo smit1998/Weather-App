@@ -127,10 +127,23 @@ export default class SignUpPage extends React.Component {
   renderSignUpSuccess() {
     return (
       <React.Fragment>
+        <video autoPlay loop muted style={{
+          position: 'absolute',
+          width: '100%',
+          left: '50%',
+          top: '50%',
+          height: '100%',
+          objectFit: 'cover',
+          transform: 'translate(-50%, -50%)',
+          zIndex: '-1'
+        }}>
+          <source src={Forest} type="video/mp4" />
+        </video>
         <h1>{'Your account has been successfully created!'}</h1>
         <Button
           className="button"
           onClick={() => this.redirectToPath('/login')}
+          style={{backgroundColor: 'green'}}
         >
           {`Go to the login page`}
         </Button>

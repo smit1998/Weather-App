@@ -63,10 +63,10 @@ export default class ProfilePage extends React.Component {
                     <source src={Forest} type="video/mp4" />
                 </video>
                 <Header />
-                <div className="mainContainer1">
+                <div className="mainContainer1"> My Details
                     <div className="usernameContainer1">    Username: {this.state.username} </div>
                     <input className="inputContainer1" value={this.state.email} onChange={(e) => this.setState({ email: e.target.value}) } ></input>
-                    <Button className="button1" onClick={this.updateProfile}> Save </Button>
+                    {/* <Button className="button1" onClick={this.updateProfile}> Save </Button> */}
                 </div>
 
             </React.Fragment>
