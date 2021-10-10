@@ -1,29 +1,37 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.css'
-import Button from 'react-bootstrap/Button';
-import '../../styles/button.css';
-import '../Maps/maps.css';
-import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
+import React, { Component } from 'react';
+import GoogleMapReact from 'google-map-react';
+import Header from '../../components/Header/header';
 
-export class Maps extends React.Component {
+const AnyReactComponent = ({ text }) => <div>{text}</div>;
+
+class SimpleMap extends Component {
+    static defaultProps = {
+        center: {
+            lat: 59.95,
+            lng: 30.33
+        },
+        zoom: 11
+    };
 
     render() {
         return (
-            <div className="MapsContainer">    
-                <Map google={this.props.google} zoom={14}>
-
-                    <Marker onClick={this.onMarkerClick} name={'Current Location'} />
-                    <InfoWindow onClose={this.InfoWindowClose}>
-                        <div>
-                        </div>
-                    </InfoWindow>
-
-                </Map>
+            // Important! Always set the container height explicitly
+            <div style={{ height: '100vh', width: '100%' }}>
+                <Header />
+                <GoogleMapReact
+                    bootstrapURLKeys={{ key: "AIzaSyCAgXBp6LdYcyHjrW0P1y3I8JVttUUheTg" }}
+                    defaultCenter={this.props.center}
+                    defaultZoom={this.props.zoom}
+                >
+                    <AnyReactComponent
+                        lat={59.955413}
+                        lng={30.337844}
+                        text="My Marker"
+                    />
+                </GoogleMapReact>
             </div>
         );
     }
 }
 
-export default GoogleApiWrapper({
-    apiKey: ("AIzaSyCAgXBp6LdYcyHjrW0P1y3I8JVttUUheTg")
-}) (Maps)
+export default SimpleMap;

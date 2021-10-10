@@ -7,6 +7,7 @@ import WeatherData from '../WeatherForcast/weatherForcast';
 import Forest from '../../assets/Forest.mp4';
 import Clouds from '../../assets/Clouds.mov';
 import Header from '../../components/Header/header';
+import './home.css';
 
 export default class HomePage extends React.Component {
   constructor(props) {
