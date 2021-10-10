@@ -30,6 +30,7 @@ export default class WeatherForcastPrefilled extends React.Component {
     }
 
     removeFromFav() {
+        console.log("123 is here!");
         const location = this.state.city;
         API.removeFromFavourite(location)
             .then(
@@ -37,6 +38,7 @@ export default class WeatherForcastPrefilled extends React.Component {
                     if (result.status === 201) {
                         alert(location + " removed from you favourites list!");
                     } else {
+                        console.log("unsuccessful to remove fav");
                         alert("Your request can not be processed at this moment!");
                     }
                 }
@@ -147,7 +149,7 @@ export default class WeatherForcastPrefilled extends React.Component {
                 <div background_video={this.state.background_video}>
                     <form style={{ textAlign: 'center' }}>
                         <input type="text" className="inputCity" value={this.state.city} placeholder="  CITY"/> <br />
-                        <Button className="submitButton" onClick={this.checkValue}>Submit</Button>
+                        <Button className="submitButton" onClick={this.checkValue}>Ok</Button>
                     </form>
                     <div className="mainContainer">
                         <div className="todayWeatherContainer">{this.state.todayTemp}<br />{this.state.todayWeather} <br /> {todayDate}/{todayMonth}/{todayYear}</div>
@@ -195,7 +197,7 @@ export default class WeatherForcastPrefilled extends React.Component {
                                 {"TMin - "}{this.state.weekTempMin[6]} <br />
                             </div>
                         </div>
-                        <Button className="submitButton" onClick={this.removeFromFav}>Remove From Favourite</Button>
+                        {/* <Button className="submitButton" onClick={this.removeFromFav}>Remove From Favourite</Button> */}
                     </div>
                 </div>
             );

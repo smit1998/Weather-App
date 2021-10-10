@@ -32,7 +32,7 @@ export default class API {
       );
   }
 
-  static signUp(username, password) {
+  static signUp(username, password, email) {
     return fetch('/auth/users/', {
         method: 'POST',
         headers: {
@@ -40,7 +40,8 @@ export default class API {
         },
         body: JSON.stringify({
           'username': username,
-          'password': password
+          'password': password,
+          'email': email,
         }),
       })
       .then(res => res.json()
@@ -57,6 +58,34 @@ export default class API {
         }
       })
       .then(res => ({ status: res.status }));
+  }
+
+  static myProfile() {
+    return fetch('/api/user/me', {
+      method: 'GET',
+      headers: {
+        'Authorization': getAuthToken(),
+      }
+    })
+      .then(res => res.json()
+        .then(data => ({ status: res.status, body: data }))
+      );
+  }
+
+  static updateUserProfile(email) {
+    return fetch('/api/user/update', {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': getAuthToken(),
+      },
+      body: JSON.stringify({
+        'email': email,
+      }),
+    })
+      .then(res => res.json()
+        .then(data => ({ status: res.status, body: data }))
+      );
   }
 
   static addToFavourite(location) {

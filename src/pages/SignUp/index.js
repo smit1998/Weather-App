@@ -6,12 +6,26 @@ import Alert from 'react-bootstrap/Alert';
 import '../../styles/button.css';
 import '../../styles/form.css';
 import API from '../../api';
-import Forest from '../../assets/Forest.mp4'
+import Forest from '../../assets/Forest.mp4';
+import {
+  Card,
+  CardBody,
+  FormGroup,
+  Input,
+  InputGroupAddon,
+  InputGroupText,
+  InputGroup,
+  Col,
+} from 'reactstrap';
+
 export default class SignUpPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      firstname: '',
+      lastname: '',
       username: '',
+      email: '',
       password: '',
       confirmPassword: '',
       error: '',
@@ -26,14 +40,13 @@ export default class SignUpPage extends React.Component {
 
   handleSignUp(event) {
     event.preventDefault();
-    const { username, password, confirmPassword } = this.state;
-
+    const { username, password, confirmPassword, firstname, lastname, email } = this.state;
     if (password !== confirmPassword) {
       this.setState({ error: 'The passwords do not match. Please try again.' });
       return;
     }
 
-    API.signUp(username, password)
+    API.signUp(username, password, email)
       .then(
         result => {
           const data = result.body;
@@ -78,6 +91,15 @@ export default class SignUpPage extends React.Component {
                 onChange={e => this.setState({ username: e.target.value })}
               />
             </Form.Group>
+          <Form.Group className="form-group">
+            <Form.Label style={{ color: 'green' }}>{'email'}</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Username"
+              value={this.state.email}
+              onChange={e => this.setState({ email: e.target.value })}
+            />
+          </Form.Group>
             <Form.Group className="form-group">
             <Form.Label style={{ color: 'green' }}>{'Password'}</Form.Label>
               <Form.Control

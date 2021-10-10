@@ -37,3 +37,9 @@ class UserRegistrationSerializer(BaseUserRegistrationSerializer):
          raise serializers.ValidationError('A user with this username has already been registered')
       except User.DoesNotExist:
          return value
+
+class UserUpdateSerializer(serializers.Serializer):
+   email = serializers.EmailField(allow_blank=False, required=True)
+
+   class Meta:
+      fields = ('email')

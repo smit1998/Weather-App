@@ -8,6 +8,7 @@ import LoginPage from './pages/Login';
 import SignUpPage from './pages/SignUp';
 import Favourite from './pages/Favourites';
 import Maps from './pages/Maps';
+import ProfilePage from './pages/userProfile';
 import './styles/App.css';
 import './styles/index.css';
 import './styles/button.css';
@@ -22,6 +23,7 @@ class App extends React.Component {
         <Route exact path="/signup" component={SignUpPage} />
         <Route exact path="/Favourites" component={Favourite} />
         <Route exact path="/Maps" component={Maps} />
+        <Route exact path="/Profile" component={ProfilePage}/>
       </Switch>
     );
   }

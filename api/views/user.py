@@ -29,3 +29,25 @@ class UserMyself(APIView):
             'email': user.email,
             'id': user.id,
         })
+
+class UpdateUser(APIView):
+    permission_classes = (IsAuthenticated,)
+
+    def put(self, request):
+        serializer = UserUpdateSerializer(data=request.data)
+
+        if serializer.is_valid():
+            self.update_details(request.user, request.data)
+            return Response(serializer.data)
+
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def update_details(self, user, data):
+        modified = False
+
+        if data.get('email'):
+            user.email = data.get('email')
+            modified = True
+
+        if modified:
+            user.save()

@@ -72,7 +72,6 @@ export default class HomePage extends React.Component {
   }
 
   renderLoggedIn() {
-    console.log(this.props);
     return (
       <React.Fragment>
             <video autoPlay loop muted style={{
