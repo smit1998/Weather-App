@@ -5,7 +5,6 @@ import '../../styles/button.css';
 import API from '../../api';
 import Header from '../../components/Header/header';
 import Forest from '../../assets/Forest.mp4';
-import { Alert } from 'reactstrap';
 import './userProfile.css';
 
 export default class ProfilePage extends React.Component {
@@ -38,13 +37,13 @@ export default class ProfilePage extends React.Component {
             .then(
                 result => {
                     if(result.status === 200) {
-                        Alert("Your email has been changed successfully!");
+                        alert("Your email has been changed successfully!");
                     } else {
-                        Alert("Requested email change was unsuccessful!");
+                        alert("Requested email change was unsuccessful!");
                     }
                 }
             )
-            .catch((error) => Alert(error));
+            .catch((error) => console.log(error));
     }
 
     render() {
