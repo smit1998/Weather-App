@@ -56,7 +56,7 @@ export default class WeatherData extends React.Component {
             .then(
                 result => {
                     if(result.status === 201) {
-                        alert(location + " removed from you favourites list!");
+                        alert(location + " removed from your favourites list!");
                     } else {
                         alert("Your request can not be processed at this moment!");
                     }
@@ -77,7 +77,7 @@ export default class WeatherData extends React.Component {
             )
                 .then((res) => res.json())
                 .then((data) => this.setState({ lat: data[0].lat, lon: data[0].lon }))
-                .catch((error) => alert("Error! No such city exists! Please check you entry"));
+                .catch((error) => console.log("Error! No such city exists! Please check you entry"));
 
             // Finding city and it's weather based on the latitude and longitude
             const data = await fetch(
@@ -160,7 +160,7 @@ export default class WeatherData extends React.Component {
                 <div background_video={this.state.background_video}>
                     <form style={{ textAlign: 'center' }}>
                         <input className="inputCity" type="text" placeholder="City" onChange={e => { this.setState({ city: e.target.value }) }} /><br />
-                        <Button className="submitButton" onClick={this.checkValue}>Submit</Button>
+                        <Button className="submitButton" type="submit" onClick={this.checkValue}>Submit</Button>
                     </form>
                     <div className="mainContainer">
                         <div className="todayWeatherContainer">{this.state.todayTemp}<br />{this.state.todayWeather} <br /> {todayDate}/{todayMonth}/{todayYear}</div>

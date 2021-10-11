@@ -36,7 +36,7 @@ export default class WeatherForcastPrefilled extends React.Component {
             .then(
                 result => {
                     if (result.status === 201) {
-                        alert(location + " removed from you favourites list!");
+                        alert(location + " removed from your favourites list!");
                     } else {
                         console.log("unsuccessful to remove fav");
                         alert("Your request can not be processed at this moment!");

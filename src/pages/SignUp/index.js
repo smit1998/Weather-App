@@ -52,7 +52,8 @@ export default class SignUpPage extends React.Component {
           const data = result.body;
           if (result.status === 400) {
           // console.log(data);
-            alert("User with this username exists! Please enter a different username.")
+            // alert("Please check your details! One of the fields is incorrect")
+            this.setState({ error: "Please check your details! One of the fields is incorrect"})
           } else if (result.status !== 201) {
             alert('We could not process your request at this time. Please try again.');
           } else {
@@ -139,7 +140,7 @@ export default class SignUpPage extends React.Component {
         }}>
           <source src={Forest} type="video/mp4" />
         </video>
-        <h1>{'Your account has been successfully created!'}</h1>
+        <h1 style={{color: 'green'}}>{'Your account has been successfully created!'}</h1>
         <Button
           className="button"
           onClick={() => this.redirectToPath('/login')}
