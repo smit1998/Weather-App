@@ -5,7 +5,7 @@ from rest_framework.views import APIView
 from rest_framework import status
 from rest_framework.permissions import IsAuthenticated
 from django.contrib.auth.models import User
-from api.serializers.user import UserSerializer
+from api.serializers.user import UserSerializer, UserUpdateSerializer
 
 
 class Users(APIView):
